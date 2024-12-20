@@ -2,7 +2,7 @@ import { AnimesModel } from '../model/animesModel.js'
 import * as url from "node:url"
 
 export const animesController = async (req, res, payloadBruto, urlparts) => {
-    const queryParams = url.parse(req.url, true);
+    const queryParams = url.parse(req.url, true)
     /**
      * LISTAR TODOS LOS ANIMÉS
      * (api/animes)
@@ -22,7 +22,7 @@ export const animesController = async (req, res, payloadBruto, urlparts) => {
      * (api/animes?nombre=anime)
      */
     else if (req.method == 'GET' && !urlparts[2] && queryParams.search) {
-        const { nombre } = queryParams.query;
+        const { nombre } = queryParams.query
         const animes = await AnimesModel.getAll()
         let ids = Object.keys(animes)
         for (let id of ids) {

@@ -1,5 +1,5 @@
 import * as http from 'node:http'
-import { router } from './routes.js'
+import { router } from './route.js'
 
 const port = process.argv[2] || 3000
 const server = http.createServer(router)
